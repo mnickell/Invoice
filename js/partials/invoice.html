@@ -1,0 +1,44 @@
+<form>
+	<div class="container-fluid">
+		<div class="input-group">
+			<label for="invoiceNo">Invoice Number:</label>
+			<input type="text" name="invoiceNo" placeholder="Invoice Number" ng-model="details.invoiceNumber"/>
+		</div>
+		<div class="input-group">
+			<label for="customer">Customer Name:</label>
+			<input type="text" name="customer" placeholder="Customer" ng-model="details.customer"/>
+		</div>
+		<div class="input-group">
+			<label for="date">Date:</label>
+			<input type="date" name="date" ng-model="details.date"/>
+		</div>
+	</div>
+
+	<a class="btn btn-success add-products" href="#/products">Add Items</a>
+
+	<table class="table">
+		<thead>
+			<tr>
+				<td>Product Name</td>
+				<td class="quantity">Quantity</td>
+				<td class="price">Price ($)</td>
+				<td class="total">Total ($)</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in details.lineItems">
+				<td>{{item.name}}</td>
+				<td class="quantity"><input ng-model="item.quantity" /></td>
+				<td class="price"><input ng-model="item.price" /></td>
+				<td class="total">{{itemTotal(item.quantity, item.price)}}</td>
+		</tbody>
+
+	</table>
+	<div class="totals">
+		<div>Subtotal: <span>${{subtotal()}}</span></div>
+		<div>Tax (6%): <span>${{tax()}}</span></div>
+		<div>Grand Total: <span>${{grandtotal()}}</span></div>
+	</div>
+
+	<button class="btn btn-primary save-invoice" ng-click="saveInvoice()">Save</button>
+</form>

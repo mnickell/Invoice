@@ -1,0 +1,58 @@
+body{
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+label{
+	display: block;
+}
+
+.input-group{
+	float: left;
+	margin-right: 20px;
+}
+
+.add-products{
+	float: right;
+}
+.save-invoice{
+	clear: both;
+	float: right;
+	margin-top: 20px;
+}
+.item{
+	float: left;
+	margin: 25px;
+}
+
+.table input{
+	padding: 0;
+	border: none;
+}
+
+.table input:focus{
+	border: 1px solid #d3d3d3;
+}
+
+.table thead td{
+	font-weight: bold;
+}
+
+.quantity,
+.quantity input,
+.price,
+.price input,
+.total{
+	text-align: right;
+}
+
+.totals{
+	float: right;
+	width: 175px;
+}
+
+.totals span{
+	display: inline-block;
+	text-align: right;
+	float: right;
+}

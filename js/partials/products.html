@@ -1,0 +1,9 @@
+<div>
+	<a href="#/invoice" class="btn btn-primary">Done</a>
+</div>
+<div ng-repeat="item in products" class="item">
+	<img src="img/placeholder.png" />
+	<div>{{item.name}}</div>
+	<button class="btn" ng-click="addItem(item)" ng-hide="item.added">Add Item</button>
+	<button class="btn btn-success" ng-show="item.added">Added!</button>
+</div>
